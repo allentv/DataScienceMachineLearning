@@ -1,0 +1,7 @@
+This file provides links to installation details for various packages
+
+1) wxPython - http://wiki.wxpython.org/How%20to%20install%20wxPython
+2) Pandas - http://pandas.pydata.org/pandas-docs/stable/install.html
+3) Numpy & SciPy - http://www.scipy.org/scipylib/download.html
+4) Python - https://www.python.org/downloads/
+5) Anaconda - http://continuum.io/downloads
