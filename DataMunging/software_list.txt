@@ -5,3 +5,4 @@ This file provides links to installation details for various packages
 3) Numpy & SciPy - http://www.scipy.org/scipylib/download.html
 4) Python - https://www.python.org/downloads/
 5) Anaconda - http://continuum.io/downloads
+6) XlsxWriter - pip install XlsxWriter
