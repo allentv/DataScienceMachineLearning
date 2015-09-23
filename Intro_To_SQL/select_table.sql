@@ -49,3 +49,40 @@ SELECT COUNT(*) FROM student;
 
 -- Fetch the records with empty (NULL) values in the 'Age' column
 SELECT * FROM student WHERE Age IS NULL;
+
+
+-- Simple join operation
+-- Data from two tables are combined based on a lookup condition
+-- Table aliases - t1, t2 are used to uniquely identify columns for each table
+SELECT
+    t1.First_Name, t1.Last_Name, t2.marks1, t2.marks2, t2.marks3
+FROM
+    student t1, marks t2
+WHERE
+    t1.ID = t2.Lookup_Key;
+
+
+-- Sub-Query
+-- The result of one select query is used to filter records of another query. 
+-- The IN operator while check if the value of current record is present in
+-- the list of values returned from the sub-query.
+SELECT
+    First_Name, Last_Name
+FROM
+    student
+WHERE
+    ID IN (
+        SELECT Lookup_Key FROM marks WHERE marks1 IN (5, 10)
+    );
+
+
+-- Group By operation
+-- The records are grouped based on the column 'Lookup_Key'
+-- An aggregate operation SUM is applied to 3 columns - marks1, marks2, marks3
+-- Display aliases are provided for the columns for better readability
+SELECT
+    Lookup_Key, SUM(marks1) 'Marks1 Total', SUM(marks2) 'Marks2 Total', SUM(marks3) 'Marks3 Total'
+FROM
+    marks
+GROUP BY
+    Lookup_Key;

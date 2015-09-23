@@ -20,8 +20,13 @@ CREATE TABLE student (
 
 CREATE TABLE marks (
     ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    Lookup_Key INT NOT NULL
+    Lookup_Key INT NOT NULL,
+    marks1 INT,
+    marks2 INT,
+    marks3 INT,
+    FOREIGN KEY marks(Lookup_Key) REFERENCES student(ID)
 );
 
-
--- TODO: Add a test table for alter table code
+-- Add a new column 'comments'. The default value for this column would be NULL
+ALTER TABLE marks ADD COLUMN comments VARCHAR(50);
+ALTER TABLE marks DROP COLUMN comments;
