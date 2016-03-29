@@ -1,0 +1,44 @@
+Case Study:
+-----------
+The data file in the folder - product_test_data.csv, is the outcome of a product
+entry survey done by a company to understand the quantities of the products used
+by its customers. Each customer fills in the data automatically using their
+inventory management system and the data dump is created at the close of the survey.
+
+The main fields for the customer are Product, Amount and Entry_Date.
+* Product: Is a pre-defined list of product names
+* Amount: How much amount of the product is used in different applications
+* Entry_Date: Date on which the product usage was entered into the system
+
+
+Things to Note:
+---------------
+* Re-create the data file for each new day that you try working on the data as
+  the current date is used for creating data
+* The customers are expected to enter the amount of product (in grams) that is used for
+  an application when it happens. So the "Amount" field will be a list of values.
+* The survey duration is 90 days
+* There are only 5 products - Product1, Product2, Product3, Product4 and Product5
+* Total users are 50 with IDs between 1 and 50
+
+
+Assumptions:
+------------
+* A survey always begins on the 1st day of the week
+* The survey closes today and the start date is 90 days prior
+
+
+To-Do:
+------
+Using a Jupyter notebook, find answers to the following questions:
+1) List the top 10 customers who has the maximum usage of all products
+2) List the top 3 users who has the most number of data entries for "Product1"
+3) Which product has the maximum usage across all customers?
+4) Find the weekly usage of each product across all users
+
+
+
+Hint:
+-----
+* Data transformations would be required to find answers
+* You can use Matplotlib or seaborn visualization package to showcase visualizations
