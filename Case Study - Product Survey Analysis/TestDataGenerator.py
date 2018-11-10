@@ -46,7 +46,7 @@ def get_value_list():
     Returns a list of values filled with random numbers.
     The number of elements changes each time the function is called
     """
-    return [some_random_number() for _ in xrange(some_random_number())]
+    return [some_random_number() for _ in range(some_random_number())]
 
 
 def generate_test_data():
@@ -57,14 +57,14 @@ def generate_test_data():
     Product: The name of the product
     Entry_Date: Date at which the data was entered
     """
-    print "Test data generation started..."
+    print("Test data generation started...")
     processing_start_time = datetime.datetime.now()
     
     SURVEY_DURATION = 90   # In days    
     today_date = datetime.datetime.today()
     start_date = today_date - datetime.timedelta(days=SURVEY_DURATION)
 
-    with open('product_test_data.csv', 'wb') as test_file:
+    with open('product_test_data.csv', 'w') as test_file:
         file_writer = csv.writer(test_file, quoting=csv.QUOTE_ALL)
         
         # Write the file header
@@ -73,7 +73,7 @@ def generate_test_data():
         ])
         
         row_id = 1   # A Row ID to keep track of how many records were created
-        for day in xrange(SURVEY_DURATION):   # Data for each day of the survey
+        for day in range(SURVEY_DURATION):   # Data for each day of the survey
             # Extract the date portion        
             data_entry_date = str(
                 start_date + datetime.timedelta(days=day)
@@ -90,11 +90,11 @@ def generate_test_data():
                     row_id += 1
 
         processing_end_time = datetime.datetime.now()
-        print "Test data file generated in %s min %s seconds with %s records" % (
+        print("Test data file generated in %s min %s seconds with %s records" % (
             (processing_end_time - processing_start_time).seconds / 60,
             (processing_end_time - processing_start_time).seconds,
             row_id
-        )
+        ))
 
 
 if __name__ == '__main__':
